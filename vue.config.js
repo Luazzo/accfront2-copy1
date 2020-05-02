@@ -37,10 +37,10 @@ module.exports = {
 
     config
         .entry('main')
-          .clear()
+          .clear();
     config
         .entry('dash')
-          .clear()
+          .clear();
 
 
     config
