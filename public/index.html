@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" sizes="96x96" href="<%= webpackConfig.output.publicPath %>favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=1, shrink-to-fit=no" name="viewport">
+
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
+  <title>ACConseils</title>
+
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200|Open+Sans+Condensed:700" rel="stylesheet">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+  <!--vuejs localStorage via Vuex-->
+  <script src="https://unpkg.com/vue-ls@3.2.1/dist/vue-ls.min.js"> </script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="apple-touch-icon" href="{{ asset('img/icons/apple-icon-72x72.png') }}">
+
+  <style>
+    html, body {
+    min-height: 100% !important;
+    height: 100%;
+    background-color: white;
+}
+  </style>
+</head>
+<body>
+<noscript>
+  <strong>We're sorry but ACConseils doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+
+<script>
+  /*NOTE: It is important to note that if you already have a live app, then this won’t work unless
+  the user does a full refresh which 99% is not going to happen. So your best option would be
+  to add a small script to your index.html that uninstalls all service-workers for a week/month.
+  https://medium.com/js-dojo/vuejs-pwa-cache-busting-8d09edd22a31*/
+  if(window.navigator && navigator.serviceWorker) {
+    navigator.serviceWorker.getRegistrations()
+    .then(function(registrations) {
+      for(let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+</html>
