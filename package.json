@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@websanova/vue-auth": "^2.21.16-beta",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "chartist": "0.11.4",
     "core-js": "^3.6.4",
